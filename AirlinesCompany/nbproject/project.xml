@@ -10,10 +10,6 @@
                     <file>${file.reference.mysql-connector-java-5.1.42-bin.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
-                <library dirs="200">
-                    <file>${file.reference.AirLinesDAL.jar}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>
@@ -23,8 +19,5 @@
                 <root id="test.src.dir" name="Test Packages"/>
             </test-roots>
         </data>
-        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
-            <word>Welome</word>
-        </spellchecker-wordlist>
     </configuration>
 </project>
