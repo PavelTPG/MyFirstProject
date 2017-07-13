@@ -7,11 +7,11 @@
 </head>
 <body>
 	<form action="LoginServlet" method="post">
-		<fieldset style="width: 300px">
+		<fieldset style="width: 500px ">
 			<legend> Login to App </legend>
 			<table>
 				<tr>
-					<td>User ID</td>
+					<td>Login</td>
 					<td><input type="text" name="username" required="required" /></td>
 				</tr>
 				<tr>
@@ -20,6 +20,7 @@
 				</tr>
 				<tr>
 					<td><input type="submit" value="Login" /></td>
+					<td><input type="submit" name="registration"value="Registration" /></td>
 				</tr>
 			</table>
 		</fieldset>

@@ -39,10 +39,15 @@ public class LoginServlet extends HttpServlet{
 			rd.forward(request,response);  
 		}  
 		else{  
-			out.print("<p style=\"color:red\">Sorry username or password error</p>");  
+			out.print("<p style=\"color:red\">Sorry login or password error</p>");  
 			RequestDispatcher rd=request.getRequestDispatcher("index.jsp");  
 			rd.include(request,response);  
-		}  
+		}if (true) {
+                out.print("<p style=\"color:blue\">maby you wont registration</p>");  
+			RequestDispatcher rd=request.getRequestDispatcher("registration.jsp");  
+			rd.include(request,response);
+            } 
+            
 
 		out.close();  
 	}  

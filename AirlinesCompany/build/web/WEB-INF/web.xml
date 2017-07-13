@@ -4,9 +4,25 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>SourceLogin.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Registration</servlet-name>
+        <servlet-class>SourceRegistration.Registration</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ADDUser</servlet-name>
+        <servlet-class>ADDUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Registration</servlet-name>
+        <url-pattern>/Registration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ADDUser</servlet-name>
+        <url-pattern>/ADDUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

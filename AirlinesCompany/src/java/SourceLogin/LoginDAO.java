@@ -21,17 +21,17 @@ public class LoginDAO {
 		ResultSet rs = null;
 
 		String url = "jdbc:mysql://localhost:3306/";
-		String dbName = "form";
+		String dbName = "airlines";
 		String driver = "com.mysql.jdbc.Driver";
-		String userName = "root";
+		String login = "root";
 		String password = "";
 		try {
 			Class.forName(driver).newInstance();
 			conn = DriverManager
-					.getConnection(url + dbName, userName, password);
+					.getConnection(url + dbName, login, password);
 
 			pst = conn
-					.prepareStatement("select * from login where user=? and password=?");
+					.prepareStatement("select * from user where login=? and password=?");
 			pst.setString(1, name);
 			pst.setString(2, pass);
 
