@@ -7,6 +7,7 @@ package SourceLogin;
  */
 
 
+import SourceRegistration.Registration;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -33,20 +34,19 @@ public class LoginServlet extends HttpServlet{
 		HttpSession session = request.getSession(false);
 		if(session!=null)
 		session.setAttribute("name", n);
-
+                
 		if(LoginDAO.validate(n, p)){  
 			RequestDispatcher rd=request.getRequestDispatcher("welcome.jsp");  
 			rd.forward(request,response);  
 		}  
 		else{  
 			out.print("<p style=\"color:red\">Sorry login or password error</p>");  
-			RequestDispatcher rd=request.getRequestDispatcher("index.jsp");  
-			rd.include(request,response);  
-		}if (true) {
-                out.print("<p style=\"color:blue\">maby you wont registration</p>");  
-			RequestDispatcher rd=request.getRequestDispatcher("registration.jsp");  
-			rd.include(request,response);
-            } 
+			  
+			RequestDispatcher rd2=request.getRequestDispatcher("registration.jsp");  
+			 
+			rd2.include(request,response);  
+		}
+             
             
 
 		out.close();  

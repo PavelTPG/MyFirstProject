@@ -10,8 +10,10 @@
         <h4>
             Hello,
             <%=session.getAttribute("name")%></h4>
+            <form>
     <tr>
-        <td><input type="submit" value="list Plane" /></td>
+        <td><input type="submit"name="plane" value="list Plane" /></td>
        </tr>
+       </form>
 </body>
 </html>
