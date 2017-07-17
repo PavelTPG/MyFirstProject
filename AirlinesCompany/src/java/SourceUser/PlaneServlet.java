@@ -14,7 +14,6 @@ import java.sql.*;
  * переменные CLASSPATH, LD_LIBRARY_PATH, ODBCINI должны быть соответствующим
  * образом установлены.
  */
-
 public class PlaneServlet extends HttpServlet {
 
     /**
@@ -30,70 +29,71 @@ public class PlaneServlet extends HttpServlet {
     public void service(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         String id_plane;
-        String  date_start,
+        String date_start,
                 date_end, city_begin, city_end;
-        Connection con;
+        Connection connection = null;
         PrintStream out;
         /* ServletOutputStream out = res.getOutputStream();*/
 // Загрузка параметров. Именно эти параметры должны будут вводиться
 // в специально прорисованном окне браузера, с которым будет
 // взаимодействовать наш сервлет
-        
-         id_plane = req.getParameter("id_plane");
+
+        id_plane = req.getParameter("id_plane");
         date_start = req.getParameter("date_start");
         date_end = req.getParameter("date_end");
         city_begin = req.getParameter("city_begin");
         city_end = req.getParameter("city_end");
-        
+
         res.setContentType("text/html");
         out = new PrintStream(res.getOutputStream());
         printPageHeader(out);
 // в том случае, если параметры отсутствуют
-        if ( id_plane == null|| date_start == null || date_end == null
+        if (id_plane == null || date_start == null || date_end == null
                 || city_begin == null || city_end == null) {
             printPageFooter(out);
             return;
         }
 
-        String url = "jdbc:mysql://localhost:3306/";
+        String drive = "com.mysql.jdbc.Drive";
+        String url = "jdbc:mysql://localhost:3306/airlines";
+        String user = "root";
+        String password = "";
 
         out.println("<hr><h3>Previous Query</h3>");
         out.println("<pre>");
-        
+
         out.println(" id_plane : " + id_plane);
         out.println(" date_start : " + date_start);
         out.println(" date_end : " + date_end);
         out.println(" city_begin : " + city_begin);
         out.println(" city_end : " + city_end);
-        out.println(" date_end : " + date_end);
+
         out.println("</pre>");
         try {
-// Найти jdbc стек. Может существовать несколько 
-//зарегистрированных драйверов
-            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            Class.forName(drive);
 
 // Получить соединение с базой данных
-            con = DriverManager.getConnection(url);
+            connection = DriverManager.getConnection(url, user, password);
             out.println("<hr>");
             out.println("<h3>ODBC Driver and Database Messages</h3>");
-            checkForWarning(con.getWarnings(), out);
-            DatabaseMetaData dma = con.getMetaData();
+            checkForWarning(connection.getWarnings(), out);
+            DatabaseMetaData dma = connection.getMetaData();
             out.println("Connected to " + dma.getURL() + "<br>");
             out.println("Driver " + dma.getDriverName() + "<br>");
             out.println("Version " + dma.getDriverVersion() + "<br>");
 
             // Создать и выполнить запрос. Конкретный оператор SQL
             // вводится удаленным пользователем в окне его браузера
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(url);
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(url);
 
             // Печать результатов. 
             //Они переназначаются на стандартный вывод
             // и поступают в браузер клиента
             dispResultSet(rs, out);
             rs.close();
-            stmt.close();
-            con.close();
+            statement.close();
+            connection.close();
             out.println("<hr>");
         } catch (SQLException ex) {
             out.println("<hr>*** SQLException caught ***");
@@ -103,7 +103,7 @@ public class PlaneServlet extends HttpServlet {
                 out.println("Vendor: " + ex.getErrorCode() + "<br>");
                 ex = ex.getNextException();
             }
-        } catch (java.lang.Exception ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
 

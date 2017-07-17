@@ -9,12 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Plane fly</title>
     </head>
     <body>
+    <center>
+        <font size="5">
+        <b>LIST TO PLANE</b>
+        </font>
+    </center>
+    <hr>
         <form action="PlaneServlet" method="post">
 		<fieldset style="width: 500px ">
-			<legend> List to Plane </legend>
+			<legend> Plane </legend>
 			
 			
 		</fieldset>

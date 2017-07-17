@@ -12,7 +12,7 @@
             <%=session.getAttribute("name")%></h4>
             <form>
     <tr>
-        <td><input type="submit"name="plane" value="list Plane" /></td>
+        <td><input type="submit"name="plane.jsp" value="list Plane" /></td>
        </tr>
        </form>
 </body>

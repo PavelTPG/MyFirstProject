@@ -18,12 +18,8 @@
 
       Password: <input type="password" name="password" size="10"><br>
 
-      Email: <input type="text" name="email"><br>
-
-      Address: <input type="text" name="address"><br>
-
-      Phone: <input type="text" name="phone"><br>
-
+      name: <input type="name" name="name"><br>
+     
       <p>
 
       <table>
