@@ -18,7 +18,7 @@
         </font>
     </center>
     <hr>
-        <form action="PlaneServlet" method="post">
+        <form action="PlaneServlet2" method="post">
 		<fieldset style="width: 500px ">
 			<legend> Plane </legend>
 			

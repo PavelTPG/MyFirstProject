@@ -7,13 +7,14 @@ package SourceLogin;
  */
 
 
+import AirLines.DAL.dao.AbstractDAO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginDAO {
+public class LoginDAO extends AbstractDAO{
 	public static boolean validate(String name, String pass) {		
 		boolean status = false;
 		Connection conn = null;
