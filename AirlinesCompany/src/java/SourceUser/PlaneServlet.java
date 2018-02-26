@@ -2,6 +2,7 @@ package SourceUser;
 
 import AbstractInterfaces.DAO.IPlaneDAO;
 import AirLines.DAL.dao.AbstractDAO;
+import AirLines.DAL.dto.Entity;
 import AirLines.DAL.dto.Plane;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -283,6 +284,26 @@ public class PlaneServlet extends HttpServlet implements IPlaneDAO {
 //        out.println("</body>");
 //        out.println("</html>");
 //        out.flush();
+    }
+
+    @Override
+    public void add(Entity entity) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void delete(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void update(int id, Entity entity) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Entity getbyid(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
