@@ -3,15 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/asus/MyFirstProject/AirlinesCompany/src/java/SourceLogin/LoginDAO.java</file>
-            <file>file:/home/asus/MyFirstProject/AirlinesCompany/src/java/SourceRegistration/CheckUser.java</file>
-            <file>file:/home/asus/MyFirstProject/AirlinesCompany/web/registration.jsp</file>
+            <file>file:/home/asus/MyFirstProject/AirlinesCompany/src/java/SourceUser/PlaneServlet2.java</file>
+            <file>file:/home/asus/MyFirstProject/AirlinesCompany/src/java/SourceRegistration/AddUser.java</file>
             <file>file:/home/asus/MyFirstProject/AirlinesCompany/web/plane.jsp</file>
-            <file>file:/home/asus/MyFirstProject/AirlinesCompany/web/welcome.jsp</file>
-            <file>file:/home/asus/MyFirstProject/AirlinesCompany/web/index.jsp</file>
             <file>file:/home/asus/MyFirstProject/AirlinesCompany/src/java/SourceUser/PlaneServlet.java</file>
-            <file>file:/home/asus/MyFirstProject/AirlinesCompany/src/java/SourceLogin/LoginServlet.java</file>
-            <file>file:/home/asus/MyFirstProject/AirlinesCompany/web/errorreg.jsp</file>
         </group>
     </open-files>
 </project-private>
